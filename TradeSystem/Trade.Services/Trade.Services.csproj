@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2DE05C0-7E1E-4308-AE5E-D4D794FC73B7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Trade.Services</RootNamespace>
+    <AssemblyName>Trade.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CategoryService.cs" />
+    <Compile Include="ClientService.cs" />
+    <Compile Include="ClientTypeService.cs" />
+    <Compile Include="EmployeeService.cs" />
+    <Compile Include="ExpenseService.cs" />
+    <Compile Include="FolderService.cs" />
+    <Compile Include="Interface\ICategoryService.cs" />
+    <Compile Include="Interface\IClientService.cs" />
+    <Compile Include="Interface\IClientTypeService.cs" />
+    <Compile Include="Interface\IEmployeeService.cs" />
+    <Compile Include="Interface\IExpenseService.cs" />
+    <Compile Include="Interface\IFolderService.cs" />
+    <Compile Include="Interface\IManagerService.cs" />
+    <Compile Include="Interface\IOrderService.cs" />
+    <Compile Include="Interface\IPaymentService.cs" />
+    <Compile Include="Interface\IProductService.cs" />
+    <Compile Include="Interface\IRemainderService.cs" />
+    <Compile Include="Interface\IService.cs" />
+    <Compile Include="ManagerService.cs" />
+    <Compile Include="OrderService.cs" />
+    <Compile Include="PaymentService.cs" />
+    <Compile Include="ProductService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemainderService.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Trade.Core\Trade.Core.csproj">
+      <Project>{38ffa2d7-f12c-45c7-a767-1b6e2d3b0ab7}</Project>
+      <Name>Trade.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Trade.Data\Trade.Data.csproj">
+      <Project>{fa068393-ffb8-4707-a2eb-a508cd2d982f}</Project>
+      <Name>Trade.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Trade.ViewModels\Trade.ViewModels.csproj">
+      <Project>{c5c9c9b3-0a3c-47e0-acfd-2906ca51e764}</Project>
+      <Name>Trade.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

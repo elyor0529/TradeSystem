@@ -1,0 +1,194 @@
+﻿<Window x:Class="Trade.ClientUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:controls="clr-namespace:Trade.ClientUI.Controls"
+        xmlns:WpfKb="clr-namespace:WpfKb.Controls;assembly=WpfKb"
+        mc:Ignorable="d"
+        x:Name="Testindow"
+        Title="Trade System" Height="600" Width="800" Icon="Resources/favicon.ico" Loaded="Testindow_Loaded" >
+    <Grid>
+        <ScrollViewer  HorizontalScrollBarVisibility="Auto"  Padding="5">
+            <materialDesign:DialogHost Name="RootDialogHost" Visibility="Visible" Identifier="RootDialog1">
+                <DockPanel Margin="5">
+                    <materialDesign:ColorZone DockPanel.Dock="Bottom"
+                                      materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                      Mode="Standard">
+                        <DockPanel>
+                            <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Name="UserName"></Button>
+                            <Button x:Name="LogOutButton" HorizontalAlignment="Right" Click="LogOutButton_Click"
+                            Content="Logout" />
+                        </DockPanel>
+                    </materialDesign:ColorZone>
+                    <StackPanel>
+                        <materialDesign:ColorZone materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                          Mode="Light">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <DockPanel Grid.Row="0" Grid.Column="0">
+                                    <Expander IsExpanded="True" Name="FolderExpander">
+                                        <Expander.Header>
+                                            <TextBlock Text="Folders" />
+                                        </Expander.Header>
+                                        <StackPanel Orientation="Vertical">
+                                            <materialDesign:ColorZone Padding="10" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                  Mode="PrimaryMid" DockPanel.Dock="Top">
+                                                <DockPanel>
+                                                    <materialDesign:PackIcon HorizontalAlignment="Left" Kind="Reload" Width="40" Height="30"  MouseDoubleClick="FolderReload_OnMouseDoubleClick"/>
+                                                    <materialDesign:PackIcon HorizontalAlignment="Right" Kind="Close" Width="40" Height="30" Name="FolderCloseIcon" MouseDoubleClick="FolderCloseIcon_OnMouseDoubleClick"/>
+                                                </DockPanel>
+                                            </materialDesign:ColorZone>
+                                            <materialDesign:ColorZone Padding="10" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                          Mode="Standard" DockPanel.Dock="Top">
+                                                <DockPanel>
+                                                    <materialDesign:PackIcon Margin="0 14 0 0" Width="20" Height="20" Kind="Magnify" Foreground="{Binding ElementName=SearchTextBox, Path=BorderBrush}"/>
+                                                    <TextBox materialDesign:TextFieldAssist.Hint="Search" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  />
+                                                </DockPanel>
+                                            </materialDesign:ColorZone>
+                                            <ScrollViewer  HorizontalScrollBarVisibility="Auto">
+                                                <ListBox  x:Name="FolderListBox" MouseDoubleClick="FolderListBox_MouseDoubleClick"   />
+                                            </ScrollViewer>
+                                        </StackPanel>
+                                    </Expander>
+                                </DockPanel>
+
+                                <DockPanel Grid.Row="1" Grid.Column="0">
+                                    <Expander IsExpanded="False" Name="CategoryExpander">
+                                        <Expander.Header>
+                                            <TextBlock Text="Categories" />
+                                        </Expander.Header>
+                                        <StackPanel Orientation="Vertical">
+                                            <materialDesign:ColorZone Padding="10" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                  Mode="PrimaryMid" DockPanel.Dock="Top">
+                                                <DockPanel>
+                                                    <materialDesign:PackIcon HorizontalAlignment="Left" Kind="Reload" Width="40" Height="30"  MouseDoubleClick="FolderListBox_MouseDoubleClick"/>
+                                                    <materialDesign:PackIcon HorizontalAlignment="Right" Kind="Close" Width="40" Height="30" Name="CategoryCloseIcon" MouseDoubleClick="CategoryCloseIcon_OnMouseDoubleClick"/>
+                                                </DockPanel>
+                                            </materialDesign:ColorZone>
+                                            <materialDesign:ColorZone Padding="10" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                          Mode="Standard" DockPanel.Dock="Top">
+                                                <DockPanel>
+                                                    <materialDesign:PackIcon Margin="0 14 0 0" Width="20" Height="20" Kind="Magnify" Foreground="{Binding ElementName=SearchTextBox, Path=BorderBrush}"/>
+                                                    <TextBox materialDesign:TextFieldAssist.Hint="Search" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  />
+                                                </DockPanel>
+                                            </materialDesign:ColorZone>
+                                            <ScrollViewer  HorizontalScrollBarVisibility="Auto">
+                                                <ListBox  x:Name="CategoryListBox" MouseDoubleClick="CategoryListBox_MouseDoubleClick"   />
+                                            </ScrollViewer>
+                                        </StackPanel>
+                                    </Expander>
+                                </DockPanel>
+
+                                <DockPanel Grid.Row="2" Grid.Column="0">
+                                    <Expander IsExpanded="False" Name="ProductExpander">
+                                        <Expander.Header>
+                                            <TextBlock Text="Products" />
+                                        </Expander.Header>
+                                        <StackPanel Orientation="Vertical">
+                                            <materialDesign:ColorZone Padding="10" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                  Mode="PrimaryMid" DockPanel.Dock="Top">
+                                                <DockPanel>
+                                                    <materialDesign:PackIcon HorizontalAlignment="Left" Kind="Reload" Width="40" Height="30"  MouseDoubleClick="CategoryListBox_MouseDoubleClick"/>
+                                                    <materialDesign:PackIcon HorizontalAlignment="Right" Kind="Close" Width="40" Height="30" Name="ProductCloseIcon" MouseDoubleClick="ProductCloseIcon_OnMouseDoubleClick"/>
+                                                </DockPanel>
+                                            </materialDesign:ColorZone>
+                                            <materialDesign:ColorZone Padding="10" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                          Mode="Standard" DockPanel.Dock="Top">
+                                                <DockPanel>
+                                                    <materialDesign:PackIcon Margin="0 14 0 0" Width="20" Height="20" Kind="Magnify" Foreground="{Binding ElementName=SearchTextBox, Path=BorderBrush}"/>
+                                                    <TextBox materialDesign:TextFieldAssist.Hint="Search" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  />
+                                                </DockPanel>
+                                            </materialDesign:ColorZone>
+                                            <ScrollViewer  HorizontalScrollBarVisibility="Auto">
+                                                <ListBox  x:Name="ProductListBox" MouseDoubleClick="ProductListBox_MouseDoubleClick"   />
+                                            </ScrollViewer>
+                                        </StackPanel>
+                                    </Expander>
+                                </DockPanel>
+
+                                <DockPanel Grid.Row="3" Grid.Column="0">
+                                    <Expander IsExpanded="False" Name="OrderExpander">
+                                        <Expander.Header>
+                                            <TextBlock Text="Orders" />
+                                        </Expander.Header>
+                                        <StackPanel Orientation="Vertical">
+                                            <materialDesign:ColorZone Padding="10" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                  Mode="PrimaryMid" DockPanel.Dock="Top">
+                                                <DockPanel>
+                                                    <materialDesign:PackIcon HorizontalAlignment="Left" Kind="Reload" Width="40" Height="30"  MouseDoubleClick="ProductListBox_MouseDoubleClick"/>
+                                                    <materialDesign:PackIcon HorizontalAlignment="Right" Kind="Close" Width="40" Height="30" Name="OrderCloseIcon" MouseDoubleClick="OrderCloseIcon_OnMouseDoubleClick"/>
+                                                </DockPanel>
+                                            </materialDesign:ColorZone>
+                                            <materialDesign:ColorZone Padding="10" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                          Mode="Standard" DockPanel.Dock="Top">
+                                                <DockPanel>
+                                                    <materialDesign:PackIcon Margin="0 14 0 0" Width="20" Height="20" Kind="Magnify" Foreground="{Binding ElementName=SearchTextBox, Path=BorderBrush}"/>
+                                                    <TextBox materialDesign:TextFieldAssist.Hint="Search" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  />
+                                                </DockPanel>
+                                            </materialDesign:ColorZone>
+                                            <ScrollViewer  HorizontalScrollBarVisibility="Auto">
+                                                <DataGrid  Name="OrderGrid" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
+                      materialDesign:DataGridAssist.CellPadding="10" materialDesign:DataGridAssist.ColumnHeaderPadding="10">
+                                                    <DataGrid.Columns>
+                                                        <DataGridTextColumn Binding="{Binding Client}"
+                                            Header="Client"
+                                            EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
+                                            />
+                                                        <materialDesign:MaterialDataGridTextColumn Binding="{Binding DiscountAsPercent}"
+                                                        Header="Discount(%)"                                                        
+                                                        MaxLength="255" 
+                                                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" 
+                                                        />
+                                                        <materialDesign:MaterialDataGridTextColumn Binding="{Binding DiscountAsSom}"
+                                                        Header="Discount(sum)"                                                         
+                                                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                                        <materialDesign:MaterialDataGridTextColumn Binding="{Binding Discount}"
+                                                        Header="Discount"                                                         
+                                                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                                        <materialDesign:MaterialDataGridTextColumn Binding="{Binding TotalAmount}"
+                                                        Header="Amount(total)"                                                         
+                                                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+
+                                                        <materialDesign:MaterialDataGridTextColumn Binding="{Binding TotalAmount}"
+                                                        Header="Amount(total)"                                                         
+                                                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                                        <materialDesign:MaterialDataGridTextColumn Binding="{Binding PaidAmount}"
+                                                        Header="Amount(paid)"                                                         
+                                                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+
+                                                    </DataGrid.Columns>
+                                                </DataGrid>
+                                            </ScrollViewer>
+                                        </StackPanel>
+                                    </Expander>
+                                </DockPanel>
+
+                            </Grid>
+                        </materialDesign:ColorZone>
+                    </StackPanel>
+                </DockPanel>
+            </materialDesign:DialogHost>
+        </ScrollViewer>
+        <WpfKb:FloatingTouchScreenKeyboard
+            Visibility="Hidden"
+            x:Name="Keyboard"
+            IsOpen="True"
+            Width="800"
+            Height="400"
+            PlacementTarget="{Binding ElementName=Testindow}"
+            Placement="Center"
+            AreAnimationsEnabled="True" 
+            /> 
+    </Grid>
+</Window>

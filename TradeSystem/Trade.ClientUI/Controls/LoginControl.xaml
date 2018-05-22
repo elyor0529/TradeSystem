@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Trade.ClientUI.Controls.LoginControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             Loaded="LoginControl_OnLoaded"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
+                <Setter Property="Margin" Value="0 8 0 8" />
+            </Style>
+            <Style TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource MaterialDesignFloatingHintPasswordBox}">
+                <Setter Property="Margin" Value="0 8 0 8" />
+            </Style>
+            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignRaisedButton}">
+                <Setter Property="Margin" Value="0 8 0 8" />
+            </Style>
+            <Style TargetType="{x:Type materialDesign:PackIcon}"
+                   BasedOn="{StaticResource {x:Type materialDesign:PackIcon}}">
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Margin" Value="4 0 4 0" />
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <materialDesign:PackIcon Grid.Row="0" Grid.Column="0" Kind="Account"
+                                 Foreground="{Binding ElementName=EmployeeStackPanel}" />
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" Height="100" Grid.Row="0" Grid.Column="1"
+                      Grid.ColumnSpan="2">
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="EmployeeStackPanel" />
+        </ScrollViewer>
+        <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" Kind="Key"
+                                 Foreground="{Binding ElementName=CodeBox, Path=BorderBrush}" />
+        <PasswordBox Grid.Row="1" Grid.Column="1" x:Name="CodeBox" materialDesign:TextFieldAssist.Hint="Code"/>
+        <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Content="Login" Command="materialDesign:DialogHost.CloseDialogCommand" Name="LoginButton" Click="LoginButton_Click" />
+    </Grid>
+</UserControl>

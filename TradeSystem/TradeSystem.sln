@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trade.Core", "Trade.Core\Trade.Core.csproj", "{38FFA2D7-F12C-45C7-A767-1B6E2D3B0AB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trade.Data", "Trade.Data\Trade.Data.csproj", "{FA068393-FFB8-4707-A2EB-A508CD2D982F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trade.Services", "Trade.Services\Trade.Services.csproj", "{A2DE05C0-7E1E-4308-AE5E-D4D794FC73B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trade.ViewModels", "Trade.ViewModels\Trade.ViewModels.csproj", "{C5C9C9B3-0A3C-47E0-ACFD-2906CA51E764}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1AA11879-4FE5-4906-9EA4-B3C45CBD1D9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{0818CEDF-5080-4ED8-96AC-87B530A64AF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trade.ClientUI", "Trade.ClientUI\Trade.ClientUI.csproj", "{8A674A19-4FF6-4537-B53F-8AC69A309298}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trade.Resources", "Trade.Resources\Trade.Resources.csproj", "{F1A8D23B-ED7B-4520-828F-F4544E2F24C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trade.AdminUI", "Trade.AdminUI\Trade.AdminUI.csproj", "{B38493F1-EE86-4B20-BEDC-0E3EC5892E02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38FFA2D7-F12C-45C7-A767-1B6E2D3B0AB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38FFA2D7-F12C-45C7-A767-1B6E2D3B0AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38FFA2D7-F12C-45C7-A767-1B6E2D3B0AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38FFA2D7-F12C-45C7-A767-1B6E2D3B0AB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA068393-FFB8-4707-A2EB-A508CD2D982F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA068393-FFB8-4707-A2EB-A508CD2D982F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA068393-FFB8-4707-A2EB-A508CD2D982F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA068393-FFB8-4707-A2EB-A508CD2D982F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2DE05C0-7E1E-4308-AE5E-D4D794FC73B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2DE05C0-7E1E-4308-AE5E-D4D794FC73B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2DE05C0-7E1E-4308-AE5E-D4D794FC73B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2DE05C0-7E1E-4308-AE5E-D4D794FC73B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5C9C9B3-0A3C-47E0-ACFD-2906CA51E764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5C9C9B3-0A3C-47E0-ACFD-2906CA51E764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5C9C9B3-0A3C-47E0-ACFD-2906CA51E764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5C9C9B3-0A3C-47E0-ACFD-2906CA51E764}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A674A19-4FF6-4537-B53F-8AC69A309298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A674A19-4FF6-4537-B53F-8AC69A309298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A674A19-4FF6-4537-B53F-8AC69A309298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A674A19-4FF6-4537-B53F-8AC69A309298}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1A8D23B-ED7B-4520-828F-F4544E2F24C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1A8D23B-ED7B-4520-828F-F4544E2F24C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1A8D23B-ED7B-4520-828F-F4544E2F24C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1A8D23B-ED7B-4520-828F-F4544E2F24C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B38493F1-EE86-4B20-BEDC-0E3EC5892E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B38493F1-EE86-4B20-BEDC-0E3EC5892E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B38493F1-EE86-4B20-BEDC-0E3EC5892E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B38493F1-EE86-4B20-BEDC-0E3EC5892E02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{38FFA2D7-F12C-45C7-A767-1B6E2D3B0AB7} = {1AA11879-4FE5-4906-9EA4-B3C45CBD1D9F}
+		{FA068393-FFB8-4707-A2EB-A508CD2D982F} = {1AA11879-4FE5-4906-9EA4-B3C45CBD1D9F}
+		{A2DE05C0-7E1E-4308-AE5E-D4D794FC73B7} = {1AA11879-4FE5-4906-9EA4-B3C45CBD1D9F}
+		{C5C9C9B3-0A3C-47E0-ACFD-2906CA51E764} = {1AA11879-4FE5-4906-9EA4-B3C45CBD1D9F}
+		{8A674A19-4FF6-4537-B53F-8AC69A309298} = {0818CEDF-5080-4ED8-96AC-87B530A64AF5}
+		{F1A8D23B-ED7B-4520-828F-F4544E2F24C5} = {1AA11879-4FE5-4906-9EA4-B3C45CBD1D9F}
+		{B38493F1-EE86-4B20-BEDC-0E3EC5892E02} = {0818CEDF-5080-4ED8-96AC-87B530A64AF5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal
